@@ -16,7 +16,7 @@ const Home = () => {
 
       {/* Promotional Banner */}
       <div className="promo-banner">
-        <img src="/assets/promo-banner.jpg" alt="Promotion" />
+        <img src="/assets/watch.jpg" alt="Promotion" />
       </div>
 
       {/* Featured Products Carousel */}
