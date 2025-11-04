@@ -1,15 +1,22 @@
 import React from 'react';
 import './Home.css';
 import Carousel from 'react-bootstrap/Carousel';
+import Header from '../components/Header';
 
 const Home = () => {
   return (
     <div className="home">
+      <Header />
       {/* Hero Section */}
       <div className="hero">
         <h1>Đại Tiệc Watchholic</h1>
         <p>Giảm giá lên đến 40%</p>
         <button>Shop Now</button>
+      </div>
+
+      {/* Promotional Banner */}
+      <div className="promo-banner">
+        <img src="/assets/promo-banner.jpg" alt="Promotion" />
       </div>
 
       {/* Featured Products Carousel */}
@@ -55,6 +62,35 @@ const Home = () => {
             <img src="/assets/sport-watch.jpg" alt="Sport Watch" />
             <h3>Sport Watch</h3>
             <p>$299</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Recently Viewed Products */}
+      <div className="recently-viewed">
+        <h2>Sản phẩm đã xem</h2>
+        <div className="product-card">
+          <img src="/assets/recently-viewed.jpg" alt="Recently Viewed" />
+          <h3>Citizen 40mm Nam NJ0150-81E</h3>
+          <p>7.238.000 ₫</p>
+        </div>
+      </div>
+
+      {/* Trending Watches */}
+      <div className="trending-watches">
+        <h2>Đồng Hồ Xu Hướng 2025</h2>
+        <div className="filters">
+          <button>Nam</button>
+          <button>Nữ</button>
+          <button>Dưới 1 triệu</button>
+          <button>1-3 triệu</button>
+          <button>3-6 triệu</button>
+        </div>
+        <div className="product-grid">
+          <div className="product-card">
+            <img src="/assets/trending-watch.jpg" alt="Trending Watch" />
+            <h3>Citizen 40mm Nam NJ0151-88M</h3>
+            <p>7.238.000 ₫</p>
           </div>
         </div>
       </div>

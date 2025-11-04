@@ -3,9 +3,8 @@ import Login from './pages/Login'
 import Register from './pages/Register'
 import ProductList from './pages/ProductList'
 import Home from './pages/Home'
+import Cart from './pages/Cart'
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
@@ -18,6 +17,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/products" element={<ProductList />} />
+        <Route path="/cart" element={<Cart />} />
       </Routes>
     </Router>
   )
