@@ -40,3 +40,130 @@
 .read-the-docs {
   color: #888;
 }
+
+/* .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+} */
+
+.header .logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* .header .nav {
+  display: flex;
+  gap: 15px;
+}
+
+.header .nav a {
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+}
+
+.header .nav a:hover {
+  color: #007bff;
+}
+
+.header .actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.header .search {
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+} */
+
+/* .header .cart {
+  font-size: 20px;
+  text-decoration: none;
+  color: #333;
+}
+
+.header .cart:hover {
+  color: #007bff;
+} */
+
+.promo-banner img {
+  width: 100%;
+  margin: 20px 0;
+}
+
+/* Adjust recently viewed products */
+.recently-viewed {
+  padding: 20px;
+  background-color: #f8f9fa;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+}
+
+.recently-viewed h2 {
+  margin-bottom: 10px;
+}
+
+.recently-viewed .product-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.recently-viewed img {
+  width: 80px;
+  height: 80px;
+  border-radius: 8px;
+}
+
+/* Adjust trending watches */
+.trending-watches {
+  padding: 20px;
+}
+
+.trending-watches h2 {
+  margin-bottom: 10px;
+}
+
+.filters {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.filters button {
+  padding: 5px 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.filters button:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+.product-grid {
+  display: flex;
+  gap: 20px;
+}
+
+.product-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  text-align: center;
+}
+
+.product-card img {
+  width: 100px;
+  height: 100px;
+  border-radius: 8px;
+}
