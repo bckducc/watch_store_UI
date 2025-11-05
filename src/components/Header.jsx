@@ -8,7 +8,7 @@ const Header = () => {
       <div className="header-container">
         {/* Logo */}
         <div className="logo">
-          <a href="/">WATCHSTORE.VN</a>
+          <a href="/">WATCHSTORE</a>
         </div>
 
         {/* Navigation */}
@@ -34,6 +34,7 @@ const Header = () => {
             <a href="/cart" className="icon-btn" title="Giỏ hàng">
               <FiShoppingCart />
             </a>
+            <a href="/login">Đăng nhập</a>
           </div>
         </div>
       </div>

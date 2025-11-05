@@ -11,55 +11,56 @@ const Home = () => {
       <div className="hero">
         <h1>Đại Tiệc Watchholic</h1>
         <p>Giảm giá lên đến 40%</p>
-        <button>Shop Now</button>
       </div>
 
       {/* Promotional Banner */}
       <div className="promo-banner">
-        <img src="/assets/watch.jpg" alt="Promotion" />
+        <img src="/src/assets/watch.jpg" alt="Promotion" />
       </div>
 
-      {/* Featured Products Carousel */}
-      <Carousel>
+  {/* Featured Products Carousel */}
+  <div className="featured-carousel">
+  <Carousel>
         <Carousel.Item>
-          <img src="/assets/classic-watch.jpg" alt="Classic Watch" />
+          <img src="/src/assets/watch.jpg" alt="Classic Watch" />
           <Carousel.Caption>
             <h3>Classic Watch</h3>
             <p>$199</p>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
-          <img src="/assets/modern-watch.jpg" alt="Modern Watch" />
+          <img src="/src/assets/watch.jpg" alt="Modern Watch" />
           <Carousel.Caption>
             <h3>Modern Watch</h3>
             <p>$249</p>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
-          <img src="/assets/sport-watch.jpg" alt="Sport Watch" />
+          <img src="/src/assets/watch.jpg" alt="Sport Watch" />
           <Carousel.Caption>
             <h3>Sport Watch</h3>
             <p>$299</p>
           </Carousel.Caption>
         </Carousel.Item>
-      </Carousel>
+  </Carousel>
+  </div>
 
       {/* Popular Products */}
       <div className="popular-products">
         <h2>Đồng Hồ Được Yêu Thích Nhất</h2>
         <div className="product-grid">
           <div className="product-card">
-            <img src="/assets/classic-watch.jpg" alt="Classic Watch" />
+            <img src="src/assets/watch.jpg" alt="Classic Watch" />
             <h3>Classic Watch</h3>
             <p>$199</p>
           </div>
           <div className="product-card">
-            <img src="/assets/modern-watch.jpg" alt="Modern Watch" />
+            <img src="src/assets/watch.jpg" alt="Modern Watch" />
             <h3>Modern Watch</h3>
             <p>$249</p>
           </div>
           <div className="product-card">
-            <img src="/assets/sport-watch.jpg" alt="Sport Watch" />
+            <img src="src/assets/watch.jpg" alt="Sport Watch" />
             <h3>Sport Watch</h3>
             <p>$299</p>
           </div>
@@ -70,7 +71,7 @@ const Home = () => {
       <div className="recently-viewed">
         <h2>Sản phẩm đã xem</h2>
         <div className="product-card">
-          <img src="/assets/recently-viewed.jpg" alt="Recently Viewed" />
+          <img src="src/assets/watch.jpg" alt="Recently Viewed" />
           <h3>Citizen 40mm Nam NJ0150-81E</h3>
           <p>7.238.000 ₫</p>
         </div>
@@ -88,7 +89,7 @@ const Home = () => {
         </div>
         <div className="product-grid">
           <div className="product-card">
-            <img src="/assets/trending-watch.jpg" alt="Trending Watch" />
+            <img src="src/assets/watch.jpg" alt="Trending Watch" />
             <h3>Citizen 40mm Nam NJ0151-88M</h3>
             <p>7.238.000 ₫</p>
           </div>

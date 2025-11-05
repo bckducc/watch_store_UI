@@ -7,7 +7,7 @@
   background-size: cover;
   text-align: center;
   padding: 50px;
-  color: white;
+  color: rgb(0, 0, 0);
 }
 
 .hero h1 {
@@ -76,9 +76,19 @@ footer {
 }
 
 /* Adjust promotional banner styles */
+.promo-banner {
+  max-width: 1120px; /* slightly narrower to avoid overly large visuals on very wide screens */
+  margin: 20px auto;
+  padding: 0 20px;
+}
+
 .promo-banner img {
   width: 100%;
-  margin: 20px 0;
+  height: auto; /* keep natural aspect ratio */
+  max-height: 520px; /* prevent banner from becoming too tall on very large images */
+  object-fit: contain; /* keep whole product visible without aggressive cropping */
+  display: block;
+  border-radius: 8px;
 }
 
 /* Adjust recently viewed products */
@@ -112,6 +122,13 @@ footer {
 
 .trending-watches h2 {
   margin-bottom: 10px;
+}
+
+.trending-watches .filters button{
+  /* display: flex;
+  gap: 10px;
+  margin-bottom: 20px; */
+  color: #000000;
 }
 
 .filters {
@@ -149,4 +166,84 @@ footer {
   width: 100px;
   height: 100px;
   border-radius: 8px;
+}
+
+@media (max-width: 880px) {
+  .promo-banner img {
+    max-height: 320px;
+  }
+}
+
+@media (max-width: 420px) {
+  .promo-banner img {
+    max-height: 200px;
+    border-radius: 6px;
+  }
+}
+
+/* Featured carousel styles */
+.featured-carousel {
+  max-width: 1280px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+.featured-carousel .carousel {
+  border-radius: 8px;
+  overflow: hidden;
+  background: #111;
+}
+
+.featured-carousel .carousel-item img {
+  width: 100%;
+  height: auto; /* scale while preserving aspect ratio */
+  max-height: 480px; /* limit height so carousel doesn't dominate the page */
+  object-fit: cover; /* still crop to fill the carousel frame when necessary */
+  display: block;
+}
+
+.featured-carousel .carousel-caption {
+  right: 12%;
+  left: auto;
+  bottom: 18%;
+  text-align: left;
+  background: linear-gradient(180deg, rgba(0,0,0,0.0), rgba(0,0,0,0.45));
+  padding: 12px 18px;
+  border-radius: 6px;
+}
+
+.featured-carousel .carousel-caption h3 {
+  font-size: 26px;
+  margin-bottom: 6px;
+  color: #fff;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+}
+
+.featured-carousel .carousel-caption p {
+  color: #dfe7ff;
+  font-size: 16px;
+}
+
+@media (max-width: 880px) {
+  .featured-carousel .carousel-item img,
+  .featured-carousel .promo-banner img {
+    max-height: 320px;
+  }
+
+  .featured-carousel .carousel-caption {
+    right: 8%;
+    bottom: 14%;
+    padding: 10px 14px;
+  }
+}
+
+@media (max-width: 560px) {
+  .featured-carousel .carousel-item img,
+  .featured-carousel .promo-banner img {
+    max-height: 200px;
+  }
+
+  .featured-carousel .carousel-caption {
+    display: none; /* hide caption on very small screens to avoid overlap */
+  }
 }
