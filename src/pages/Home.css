@@ -10,30 +10,6 @@
   color: rgb(0, 0, 0);
 }
 
-.hero h1 {
-  font-size: 48px;
-  margin-bottom: 20px;
-}
-
-.hero p {
-  font-size: 24px;
-  margin-bottom: 30px;
-}
-
-.hero button {
-  padding: 10px 20px;
-  font-size: 18px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.hero button:hover {
-  background-color: #0056b3;
-}
-
 .featured-products {
   text-align: center;
   padding: 50px;
@@ -91,12 +67,83 @@ footer {
   border-radius: 8px;
 }
 
-/* Adjust recently viewed products */
-.recently-viewed {
-  padding: 20px;
-  background-color: #f8f9fa;
-  border: 1px solid #ddd;
-  margin-bottom: 20px;
+/* Collage banner (left large + bottom strip, right top + two tiles) */
+.hero-banner {
+  max-width: 1280px; /* broaden to match screenshot width */
+  margin: 18px auto;
+  display: grid;
+  grid-template-columns: 2.1fr 1fr; /* slightly bigger left column */
+  gap: 5px; /* tighter gutters like the reference */
+  padding: 0 12px;
+}
+
+.hero-banner .left {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.hero-banner .left .big img {
+  width: 100%;
+  height: 380px; /* match right column height */
+  object-fit: cover;
+  border-radius: 4px;
+  display: block;
+}
+
+.hero-banner .left .strip img {
+  width: 100%;
+  height: 180px; /* prominent strip below the large image */
+  object-fit: cover;
+  border-radius: 4px;
+  display: block;
+}
+
+.hero-banner .right {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.hero-banner .right .top img {
+  width: 100%;
+  height: 380px; /* match left big image */
+  object-fit: cover;
+  border-radius: 4px;
+  display: block;
+}
+
+.hero-banner .right .bottom {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px;
+}
+
+.hero-banner .right .bottom .tile img {
+  width: 100%;
+  height: 180px; /* slightly taller for better visual balance */
+  object-fit: cover;
+  border-radius: 4px;
+  display: block
+}
+
+.tile-label {
+  position: absolute;
+  bottom: 10px;
+  left: 12px;
+  font-weight: 800;
+  color: #fff;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+  background: rgba(0,0,0,0.4);
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+/* make tiles positioned relative so labels can overlay if desired */
+.hero-banner .right .bottom .tile {
+  position: relative;
+  overflow: hidden;
 }
 
 .recently-viewed h2 {
@@ -171,6 +218,24 @@ footer {
 @media (max-width: 880px) {
   .promo-banner img {
     max-height: 320px;
+  }
+
+  .hero-banner {
+    grid-template-columns: 1fr; /* stack on smaller screens */
+    padding: 0 12px;
+  }
+
+  .hero-banner .left .big img,
+  .hero-banner .right .top img {
+    height: 300px;
+  }
+
+  .hero-banner .left .strip img {
+    height: 120px;
+  }
+
+  .hero-banner .right .bottom .tile img {
+    height: 140px;
   }
 }
 

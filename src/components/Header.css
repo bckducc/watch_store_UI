@@ -1,3 +1,4 @@
+/* ==== Header layout ==== */
 .header {
   width: 100%;
   background-color: #fff;
@@ -9,81 +10,83 @@
 }
 
 .header-container {
-  max-width: 1380px; /* cho header rộng hơn */
+  max-width: 1380px;
   margin: 0 auto;
-  padding: 6px 40px; /* tăng lề trái & phải */
+  padding: 10px 60px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  height: 60px;
+  justify-content: flex-start;
+  height: 75px;
 }
 
-/* Logo */
+/* ==== Logo ==== */
 .logo a {
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 700;
   color: #e67e22;
   text-decoration: none;
   letter-spacing: 0.5px;
-  margin-left: 10px; /* giãn logo ra xa lề trái hơn */
+  margin-right: 50px; /* tách xa menu */
 }
 
-/* Navigation */
+/* ==== Navigation ==== */
 .nav {
   display: flex;
-  gap: 30px; /* giãn đều giữa các mục */
+  gap: 36px;
   align-items: center;
   flex: 1;
-  justify-content: center; /* căn giữa theo chiều ngang */
 }
 
 .nav a {
-  color: #222;
+  color: #333;
   text-decoration: none;
   font-size: 15px;
-  transition: color 0.2s;
+  font-weight: 500;
+  transition: color 0.25s ease, transform 0.2s;
 }
 
 .nav a:hover {
   color: #e67e22;
+  transform: translateY(-1px);
 }
 
-/* Actions (search + icons) */
+/* ==== Actions (search + icons) ==== */
 .actions {
   display: flex;
   align-items: center;
-  gap: 20px; /* tăng khoảng cách */
+  gap: 25px;
+  margin-left: 28px; /* thêm khoảng cách giữa menu và vùng tìm kiếm */
 }
 
-/* Search box */
+/* ==== Search box ==== */
 .search-box {
   position: relative;
   display: flex;
   align-items: center;
   background: #f7f7f7;
   border: 1px solid #ddd;
-  border-radius: 18px;
-  padding: 5px 12px;
+  border-radius: 22px;
+  padding: 8px 14px;
   transition: all 0.2s ease;
+}
+
+.search-icon {
+  font-size: 16px;
+  color: #777;
+  margin-right: 8px;
 }
 
 .search-box input {
   border: none;
   outline: none;
   background: transparent;
-  font-size: 13px;
+  font-size: 14px;
   color: #333;
-  width: 150px;
+  width: 160px;
 }
 
 .search-box input::placeholder {
-  color: #999;
-}
-
-.search-icon {
-  font-size: 16px;
-  color: #555;
-  cursor: pointer;
+  color: #aaa;
 }
 
 .search-box:focus-within {
@@ -91,19 +94,19 @@
   background: #fff;
 }
 
-/* Icons */
+/* ==== Icon buttons ==== */
 .icon-group {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 14px;
 }
 
 .icon-btn {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 34px;
-  height: 34px;
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
   color: #333;
   border: 1px solid #ddd;
@@ -117,15 +120,31 @@
   border-color: #e67e22;
 }
 
-/* Responsive */
+.login-link {
+  text-decoration: none;
+  font-size: 15px;
+  color: #333;
+  font-weight: 500;
+}
+
+.login-link:hover {
+  color: #e67e22;
+}
+
+/* ==== Responsive ==== */
 @media (max-width: 950px) {
+  .header-container {
+    padding: 10px 24px;
+  }
   .nav {
     gap: 18px;
     font-size: 13px;
   }
-
   .search-box input {
     width: 100px;
+  }
+  .actions {
+    margin-left: 16px; /* giảm khoảng cách ở màn hình nhỏ */
   }
 }
 
@@ -133,13 +152,11 @@
   .nav {
     display: none;
   }
-
   .header-container {
-    padding: 8px 20px;
-    height: 56px;
+    padding: 8px 16px;
+    height: 60px;
   }
-
-  .logo a {
-    margin-left: 0;
+  .search-box input {
+    width: 80px;
   }
 }

@@ -8,7 +8,7 @@ const Header = () => {
       <div className="header-container">
         {/* Logo */}
         <div className="logo">
-          <a href="/">WATCHSTORE</a>
+          <a href="/">BCKDUCWATCH</a>
         </div>
 
         {/* Navigation */}
@@ -23,8 +23,8 @@ const Header = () => {
         {/* Actions */}
         <div className="actions">
           <div className="search-box">
-            <input type="text" placeholder="Tìm là thấy" />
             <FiSearch className="search-icon" />
+            <input type="text" placeholder="Tìm là thấy..." />
           </div>
 
           <div className="icon-group">
@@ -34,7 +34,9 @@ const Header = () => {
             <a href="/cart" className="icon-btn" title="Giỏ hàng">
               <FiShoppingCart />
             </a>
-            <a href="/login">Đăng nhập</a>
+            <a href="/login" className="login-link">
+              Đăng nhập
+            </a>
           </div>
         </div>
       </div>

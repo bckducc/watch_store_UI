@@ -7,15 +7,33 @@ const Home = () => {
   return (
     <div className="home">
       <Header />
-      {/* Hero Section */}
-      <div className="hero">
-        <h1>Đại Tiệc Watchholic</h1>
-        <p>Giảm giá lên đến 40%</p>
-      </div>
 
-      {/* Promotional Banner */}
-      <div className="promo-banner">
-        <img src="/src/assets/watch.jpg" alt="Promotion" />
+      {/* Promotional collage banner */}
+      <div className="hero-banner">
+        <div className="left">
+          <div className="big">
+            <img src="/src/assets/watch.jpg" alt="Promo left large" />
+          </div>
+          <div className="strip">
+            <img src="/src/assets/watch.jpg" alt="Promo strip" />
+          </div>
+        </div>
+
+        <div className="right">
+          <div className="top">
+            <img src="/src/assets/watch.jpg" alt="Promo right top" />
+          </div>
+          <div className="bottom">
+            <div className="tile">
+              <img src="/src/assets/watch.jpg" alt="Promo right bottom 1" />
+              <span className="tile-label">NỮ</span>
+            </div>
+            <div className="tile">
+              <img src="/src/assets/watch.jpg" alt="Promo right bottom 2" />
+              <span className="tile-label">NAM</span>
+            </div>
+          </div>
+        </div>
       </div>
 
   {/* Featured Products Carousel */}
