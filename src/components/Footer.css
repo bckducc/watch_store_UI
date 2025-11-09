@@ -6,6 +6,14 @@
   box-sizing: border-box;
   position: relative;
   background: transparent; /* background will be provided by the full-bleed pseudo element */
+  /* Stretch this footer element to the full viewport width while keeping its
+     inner content centered in the site's container. Using calc-based negative
+     margins avoids 100vw/translate issues that sometimes produce tiny scrollbars. */
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  width: 100vw;
+  /* left/transform not needed when using calc-based margins */
+  overflow-x: hidden; /* safety clip */
 }
 
 /* Vùng chứa chính các cột */
@@ -19,6 +27,7 @@
   box-sizing: border-box;
   position: relative; /* keep content above the backdrop */
   z-index: 1;
+  justify-items: center; /* center items inside each grid cell */
 }
 
 /* Tiêu đề cột */
@@ -27,6 +36,10 @@
   margin-bottom: 12px;
   font-size: 16px;
   text-transform: uppercase;
+}
+
+.footer-col {
+  text-align: center; /* center text inside each column */
 }
 
 /* Danh sách liên kết */
@@ -87,7 +100,7 @@
   color: #aaa;
   font-size: 13px;
   text-align: center;
-  max-width: 1380px; /* align with .footer-inner */
+  max-width: 1380px;
   margin: 0 auto;
   padding: 6px 60px; /* match lateral padding of footer content */
   box-sizing: border-box;
@@ -95,12 +108,13 @@
 
 /* Full-bleed dark backdrop for the footer (prevents horizontal overflow) */
 .site-footer::before {
+  /* Stretch the backdrop to both edges without using 100vw (which can include scrollbar width)
+     so the element doesn't cause a tiny horizontal overflow in some browsers. */
   content: "";
   position: absolute;
-  left: 50%;
+  left: 0;
+  right: 0;
   top: 0;
-  transform: translateX(-50%);
-  width: 100vw;
   height: 100%;
   background: #000;
   z-index: 0;

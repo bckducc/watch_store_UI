@@ -2,6 +2,20 @@
   font-family: Arial, sans-serif;
 }
 
+/* Make page wrappers use column flex so footer can be pushed to the bottom */
+.home,
+.page-like-home {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* ensure page takes full viewport height */
+}
+
+/* Ensure footer (direct child) sits at the bottom when content is short */
+.home > .site-footer,
+.page-like-home > .site-footer {
+  margin-top: auto;
+}
+
 .hero {
   background: url('/assets/hero-banner.jpg') no-repeat center center;
   background-size: cover;
@@ -127,55 +141,28 @@ footer {
   display: block
 }
 
-.tile-label {
+.tile-label,
+.title-label {
+  /* center label over tile image */
   position: absolute;
-  bottom: 10px;
-  left: 12px;
-  font-weight: 800;
+  inset: 0; /* fill tile */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
   color: #fff;
   text-shadow: 0 2px 6px rgba(0,0,0,0.6);
-  background: rgba(0,0,0,0.4);
-  padding: 6px 10px;
-  border-radius: 4px;
-  font-size: 16px;
+  background: rgba(0,0,0,0.22); /* subtle overlay so text is readable */
+  padding: 0 8px;
+  border-radius: 0; /* keep full-bleed overlay */
+  font-size: 18px;
+  letter-spacing: 1px;
 }
 
 /* make tiles positioned relative so labels can overlay if desired */
 .hero-banner .right .bottom .tile {
   position: relative;
   overflow: hidden;
-}
-
-.recently-viewed h2 {
-  margin-bottom: 10px;
-}
-
-.recently-viewed .product-card {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.recently-viewed img {
-  width: 80px;
-  height: 80px;
-  border-radius: 8px;
-}
-
-/* Adjust trending watches */
-.trending-watches {
-  padding: 20px;
-}
-
-.trending-watches h2 {
-  margin-bottom: 10px;
-}
-
-.trending-watches .filters button{
-  /* display: flex;
-  gap: 10px;
-  margin-bottom: 20px; */
-  color: #000000;
 }
 
 .filters {
@@ -213,6 +200,33 @@ footer {
   width: 100px;
   height: 100px;
   border-radius: 8px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin: 30px 0;
+}
+
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+  border: 1px solid #ddd;
+  margin: 0 4px;
+  border-radius: 5px;
+}
+
+.pagination a.active {
+  background-color: #3a43c7;
+  color: white;
+  border: 1px solid #000700;
+}
+
+.pagination a:hover:not(.active) {
+  background-color: #ddd;
 }
 
 @media (max-width: 880px) {

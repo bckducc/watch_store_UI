@@ -68,7 +68,7 @@ const Footer = () => {
 
       <div className="footer-bottom">
         <div className="footer-bottom-inner">
-          ©2020-2025 by WatchStore.vn. Hotline: 093.189.2222 - Giấy chứng nhận kinh doanh số: HKD WATCHSTORE QUANG TRUNG - Mã số thuế: 41M8057473.
+          ©2020-2025 by WatchStore.vn. Hotline: 093.222.2222 - Giấy chứng nhận kinh doanh số: HKD WATCHSTORE - Mã số thuế: 41M8057473.
         </div>
       </div>
     </footer>

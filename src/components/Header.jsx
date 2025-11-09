@@ -1,6 +1,7 @@
 import React from "react";
 import "./Header.css";
 import { FiSearch, FiShoppingCart, FiHeart } from "react-icons/fi";
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
@@ -13,11 +14,11 @@ const Header = () => {
 
         {/* Navigation */}
         <nav className="nav">
-          <a href="/">Xu Hướng 2025</a>
-          <a href="/products">Đồng Hồ</a>
-          <a href="/">Nam</a>
-          <a href="/">Nữ</a>
-          <a href="/">Phụ Kiện</a>
+          <Link to="/trend">Xu Hướng 2025</Link>
+          <Link to="/products">Đồng Hồ</Link>
+          <Link to="/men">Nam</Link>
+          <Link to="/women">Nữ</Link>
+          <Link to="/accessories">Phụ Kiện</Link>
         </nav>
 
         {/* Actions */}
@@ -28,15 +29,12 @@ const Header = () => {
           </div>
 
           <div className="icon-group">
-            <a href="/" className="icon-btn" title="Yêu thích">
+            <Link to="/favorites" className="icon-btn" title="Yêu thích">
               <FiHeart />
-            </a>
-            <a href="/cart" className="icon-btn" title="Giỏ hàng">
+            </Link>
+            <Link to="/cart" className="icon-btn" title="Giỏ hàng">
               <FiShoppingCart />
-            </a>
-            <a href="/login" className="login-link">
-              Đăng nhập
-            </a>
+            </Link>
           </div>
         </div>
       </div>
