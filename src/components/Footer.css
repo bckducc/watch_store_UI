@@ -1,0 +1,132 @@
+/* ==== FOOTER CHUẨN FULL MÀN HÌNH ==== */
+.site-footer {
+  color: #ddd;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  padding-top: 36px;
+  box-sizing: border-box;
+  position: relative;
+  background: transparent; /* background will be provided by the full-bleed pseudo element */
+}
+
+/* Vùng chứa chính các cột */
+.footer-inner {
+  max-width: 1380px;
+  margin: 0 auto;
+  padding: 0 60px 28px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+  box-sizing: border-box;
+  position: relative; /* keep content above the backdrop */
+  z-index: 1;
+}
+
+/* Tiêu đề cột */
+.footer-col h4 {
+  color: #ff8a00;
+  margin-bottom: 12px;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+/* Danh sách liên kết */
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 10px;
+  color: #d6d6d6;
+  font-size: 14px;
+}
+
+/* Dòng thông tin liên hệ */
+.footer-col p {
+  margin: 6px 0;
+  color: #d6d6d6;
+  font-size: 14px;
+}
+
+/* Icon mạng xã hội */
+.socials {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.socials a {
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.socials a:hover {
+  background: #ff8a00;
+}
+
+/* Dòng bản quyền phía dưới */
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 12px 60px;
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1;
+}
+
+.footer-bottom-inner {
+  color: #aaa;
+  font-size: 13px;
+  text-align: center;
+  max-width: 1380px; /* align with .footer-inner */
+  margin: 0 auto;
+  padding: 6px 60px; /* match lateral padding of footer content */
+  box-sizing: border-box;
+}
+
+/* Full-bleed dark backdrop for the footer (prevents horizontal overflow) */
+.site-footer::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  width: 100vw;
+  height: 100%;
+  background: #000;
+  z-index: 0;
+}
+
+/* ==== Responsive ==== */
+@media (max-width: 900px) {
+  .footer-inner {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+    padding: 0 30px 28px;
+  }
+}
+
+@media (max-width: 560px) {
+  .footer-inner {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 0 20px 24px;
+  }
+
+  .footer-bottom {
+    padding: 10px 20px;
+  }
+
+  .footer-bottom-inner {
+    font-size: 12px;
+  }
+}
