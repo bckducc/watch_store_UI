@@ -16,6 +16,13 @@
   overflow-x: hidden; /* safety clip */
 }
 
+/* When the page's main container uses flex column, allow the footer to
+   be pushed to the bottom automatically. This keeps previous visual
+   styles intact while ensuring a sticky-footer behavior on short pages. */
+.site-footer {
+  margin-top: auto;
+}
+
 /* Vùng chứa chính các cột */
 .footer-inner {
   max-width: 1380px;

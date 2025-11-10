@@ -11,6 +11,29 @@ body {
   color: #333;
 }
 
+/* Make the application root a column flex container so footers can be
+   pushed to the bottom without changing existing layout rules. This is a
+   minimal, non-invasive sticky-footer approach that preserves current
+   component CSS. */
+html, body {
+  height: 100%;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Ensure the main React app content grows so footer can sit at the bottom
+   when content is short. The direct child structure of React's root may
+   vary, so we target the most common immediate child container. */
+#root > div {
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
 /* ========== WRAPPER ========== */
 #root {
   max-width: 1280px;

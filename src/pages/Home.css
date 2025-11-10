@@ -2,20 +2,6 @@
   font-family: Arial, sans-serif;
 }
 
-/* Make page wrappers use column flex so footer can be pushed to the bottom */
-.home,
-.page-like-home {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh; /* ensure page takes full viewport height */
-}
-
-/* Ensure footer (direct child) sits at the bottom when content is short */
-.home > .site-footer,
-.page-like-home > .site-footer {
-  margin-top: auto;
-}
-
 .hero {
   background: url('/assets/hero-banner.jpg') no-repeat center center;
   background-size: cover;
@@ -83,7 +69,8 @@ footer {
 
 /* Collage banner (left large + bottom strip, right top + two tiles) */
 .hero-banner {
-  max-width: 1280px; /* broaden to match screenshot width */
+  width: 100%;
+  max-width: 100%;
   margin: 18px auto;
   display: grid;
   grid-template-columns: 2.1fr 1fr; /* slightly bigger left column */
@@ -165,6 +152,22 @@ footer {
   overflow: hidden;
 }
 
+/* Adjust trending watches */
+.trending-watches {
+  padding: 20px;
+}
+
+.trending-watches h2 {
+  margin-bottom: 10px;
+}
+
+.trending-watches .filters button{
+  /* display: flex;
+  gap: 10px;
+  margin-bottom: 20px; */
+  color: #000000;
+}
+
 .filters {
   display: flex;
   gap: 10px;
@@ -220,9 +223,9 @@ footer {
 }
 
 .pagination a.active {
-  background-color: #3a43c7;
+  background-color: #4CAF50;
   color: white;
-  border: 1px solid #000700;
+  border: 1px solid #4CAF50;
 }
 
 .pagination a:hover:not(.active) {
@@ -260,69 +263,47 @@ footer {
   }
 }
 
-/* Featured carousel styles */
 .featured-carousel {
-  max-width: 1280px;
-  margin: 30px auto;
-  padding: 0 20px;
+  width: 100%;
+  max-width: 100%; /* cho phép full ngang */
+  margin: auto; /* bỏ auto để không co lại giữa */
+  padding: 0;
 }
 
 .featured-carousel .carousel {
-  border-radius: 8px;
+  width: 100%;
+  border-radius: 10px;
   overflow: hidden;
   background: #111;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
 }
 
 .featured-carousel .carousel-item img {
   width: 100%;
-  height: auto; /* scale while preserving aspect ratio */
-  max-height: 480px; /* limit height so carousel doesn't dominate the page */
-  object-fit: cover; /* still crop to fill the carousel frame when necessary */
+  height: 520px;
+  object-fit: cover;
   display: block;
 }
 
 .featured-carousel .carousel-caption {
-  right: 12%;
-  left: auto;
-  bottom: 18%;
+  right: 10%;
+  left: 10%;
+  bottom: 15%;
   text-align: left;
-  background: linear-gradient(180deg, rgba(0,0,0,0.0), rgba(0,0,0,0.45));
-  padding: 12px 18px;
+  background: rgba(0, 0, 0, 0.45);
+  padding: 14px 20px;
   border-radius: 6px;
+  backdrop-filter: blur(4px);
 }
 
 .featured-carousel .carousel-caption h3 {
-  font-size: 26px;
+  font-size: 28px;
   margin-bottom: 6px;
   color: #fff;
-  text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
 }
 
 .featured-carousel .carousel-caption p {
-  color: #dfe7ff;
+  color: #e0e8ff;
   font-size: 16px;
-}
-
-@media (max-width: 880px) {
-  .featured-carousel .carousel-item img,
-  .featured-carousel .promo-banner img {
-    max-height: 320px;
-  }
-
-  .featured-carousel .carousel-caption {
-    right: 8%;
-    bottom: 14%;
-    padding: 10px 14px;
-  }
-}
-
-@media (max-width: 560px) {
-  .featured-carousel .carousel-item img,
-  .featured-carousel .promo-banner img {
-    max-height: 200px;
-  }
-
-  .featured-carousel .carousel-caption {
-    display: none; /* hide caption on very small screens to avoid overlap */
-  }
 }
