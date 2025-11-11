@@ -157,7 +157,7 @@ const Cart = () => {
                 </button>
 
                 <button className="btn-continue">
-                  Tiếp tục mua sắm
+                  <a href="/">Tiếp tục mua sắm</a>
                 </button>
               
                 <div className="payment-methods">
