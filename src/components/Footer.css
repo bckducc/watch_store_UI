@@ -25,16 +25,18 @@
 
 /* Vùng chứa chính các cột */
 .footer-inner {
-  max-width: 1380px;
+  max-width: 1500px;
   margin: 0 auto;
-  padding: 0 60px 28px;
+  /* give the footer more lateral padding so columns spread out */
+  padding: 0 80px 36px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 28px;
+  gap: 48px;
   box-sizing: border-box;
   position: relative; /* keep content above the backdrop */
   z-index: 1;
-  justify-items: center; /* center items inside each grid cell */
+  /* align columns to start so they spread horizontally instead of centering */
+  justify-items: start;
 }
 
 /* Tiêu đề cột */
@@ -46,7 +48,7 @@
 }
 
 .footer-col {
-  text-align: center; /* center text inside each column */
+  text-align: left;
 }
 
 /* Danh sách liên kết */
@@ -133,6 +135,7 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 18px;
     padding: 0 30px 28px;
+    justify-items: start;
   }
 }
 
@@ -141,6 +144,7 @@
     grid-template-columns: 1fr;
     gap: 12px;
     padding: 0 20px 24px;
+    justify-items: start;
   }
 
   .footer-bottom {
