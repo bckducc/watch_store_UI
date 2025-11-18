@@ -1,3 +1,58 @@
+/* Hero Banner */
+.hero-banner {
+  background: url('/src/assets/hero-banner.jpg') no-repeat center center;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.hero-banner h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.hero-banner p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.cta-button {
+  background-color: #000;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.cta-button:hover {
+  background-color: #444;
+}
+
+/* Filters Section */
+.filters {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.sort-dropdown,
+.category-dropdown,
+.search-bar {
+  padding: 10px;
+  font-size: 1rem;
+  margin-right: 10px;
+}
+
+.search-bar {
+  flex: 1;
+}
+
+/* Product List */
 .product-list {
   max-width: 1200px;
   margin: 50px auto;
@@ -16,29 +71,96 @@
   justify-content: center;
 }
 
+/* Product Cards */
 .product-card {
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  padding: 16px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+  color: inherit;
   /* make product-list cards wider and consistent with home featured cards */
   flex: 0 0 320px;
-  text-align: center;
-  background-color: #fff;
 }
 
-.product-card img {
+.product-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.product-image {
   width: 100%;
   height: 220px;
-  object-fit: cover;
-  border-radius: 8px;
+  background: #f8f8f8;
+  overflow: hidden;
 }
 
-.product-card h3 {
+.product-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.product-info {
+  padding: 10px;
+}
+
+.product-info h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
   margin: 10px 0;
 }
 
-.product-card p {
-  font-size: 18px;
-  color: #007bff;
+.product-info .product-price {
+  color: #888;
+  margin-bottom: 10px;
+}
+
+.view-details {
+  background-color: #000;
+  color: #fff;
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.view-details:hover {
+  background-color: #444;
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.page-btn {
+  background-color: #000;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+  margin: 0 5px;
+}
+
+.page-btn:hover {
+  background-color: #444;
+}
+
+.page-numbers {
+  margin: 0 10px;
+  font-size: 1rem;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #f8f8f8;
+  color: #555;
+  margin-top: 20px;
 }

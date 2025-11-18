@@ -7,16 +7,17 @@
   top: 0;
   z-index: 999;
   font-family: "Segoe UI", Arial, sans-serif;
+  display: block; /* override global flex layout */
 }
 
 .header-container {
-  max-width: 1380px;
+  max-width: 1200px; /* reduce width for better alignment */
   margin: 0 auto;
-  padding: 10px 40px;
+  padding: 10px 20px; /* reduce padding */
   display: grid;
   grid-template-columns: auto 1fr auto;
-  align-items: center;
-  gap: 16px;
+  align-items: stretch; /* ensure proper alignment */
+  gap: 12px; /* tighten spacing */
   height: 72px;
 }
 
@@ -36,7 +37,7 @@
 
 .nav {
   display: flex;
-  gap: 22px;
+  gap: 18px; /* reduce gap between nav links */
   align-items: center;
   justify-self: center; /* center in the grid */
 }
@@ -50,9 +51,9 @@
 .nav a {
   color: #333;
   text-decoration: none;
-  font-size: 15px;
+  font-size: 14px; /* slightly smaller text */
   font-weight: 600;
-  padding: 8px 12px;
+  padding: 6px 10px; /* reduce padding */
   border-radius: 8px;
   transition: all 0.18s ease;
 }
@@ -69,7 +70,7 @@
 .actions {
   display: flex;
   align-items: center;
-  gap: 18px;
+  gap: 12px; /* tighten spacing between actions */
   justify-self: end; /* push to right in grid */
 }
 
@@ -81,7 +82,7 @@
   background: #f7f7f7;
   border: 1px solid #ddd;
   border-radius: 22px;
-  padding: 8px 14px;
+  padding: 6px 12px; /* reduce padding */
   transition: all 0.2s ease;
 }
 
@@ -97,7 +98,7 @@
   background: transparent;
   font-size: 14px;
   color: #333;
-  width: 160px;
+  width: 140px; /* reduce width */
   max-width: 220px;
 }
 
@@ -187,6 +188,22 @@
   color: #e67e22;
 }
 
+/* Adjusted Header Styles */
+@media (max-width: 768px) {
+  .header-container {
+    grid-template-columns: auto 1fr; /* stack logo and actions */
+    gap: 8px;
+  }
+
+  .nav {
+    display: none; /* hide nav links */
+  }
+
+  .mobile-toggle {
+    display: block; /* show mobile menu toggle */
+  }
+}
+
 /* ==== Responsive ==== */
 @media (max-width: 950px) {
   .header-container {
@@ -208,4 +225,22 @@
   .nav { display: none }
   .header-container { padding: 8px 12px; height: 60px }
   .search-box input { width: 80px }
+}
+
+/* Product Page Specific Header Fix */
+.product-page .header {
+  position: fixed; /* Ensure it stays at the top */
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999; /* Ensure it stays above other elements */
+}
+
+.product-page .header-container {
+  margin: 0 auto; /* Center the container */
+  padding: 10px 20px; /* Adjust padding */
+}
+
+.product-page body {
+  padding-top: 72px; /* Add space equal to header height */
 }
