@@ -1,4 +1,4 @@
-  import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
   import ProductList from './pages/ProductList'
   import Home from './pages/Home'
   import ProductDetail from './pages/ProductDetail'
@@ -14,18 +14,16 @@
     const [count, setCount] = useState(0)
 
     return (
-      <Router>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/products" element={<ProductList />} />
-          <Route path="/product/:id" element={<ProductDetail />} />
-          <Route path="/trend" element={<Trend />} />
-          <Route path="/men" element={<Men />} />
-          <Route path="/women" element={<Women />} />
-          <Route path="/accessories" element={<Accessories />} />
-          <Route path="/cart" element={<Cart />} />
-        </Routes>
-      </Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/products" element={<ProductList />} />
+        <Route path="/product/:id" element={<ProductDetail />} />
+        <Route path="/trend" element={<Trend />} />
+        <Route path="/men" element={<Men />} />
+        <Route path="/women" element={<Women />} />
+        <Route path="/accessories" element={<Accessories />} />
+        <Route path="/cart" element={<Cart />} />
+      </Routes>
     )
   }
 

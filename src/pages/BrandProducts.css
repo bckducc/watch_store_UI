@@ -1,0 +1,47 @@
+/* Giao diện cho trang sản phẩm theo thương hiệu */
+.brand-products-page {
+  padding: 20px;
+  text-align: center;
+}
+
+.brand-products-page h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.product-card {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.product-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.product-card h3 {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.product-price {
+  font-size: 16px;
+  color: #e74c3c;
+  font-weight: bold;
+}
+
+.product-discount {
+  font-size: 14px;
+  color: #2ecc71;
+}
