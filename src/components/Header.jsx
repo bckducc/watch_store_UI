@@ -5,7 +5,30 @@ import { Link, useLocation } from 'react-router-dom';
 
 const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [searchTerm, setSearchTerm] = useState('');
+  const [searchResults, setSearchResults] = useState([]);
   const location = useLocation();
+
+  const sampleProducts = [
+    { id: 1, name: 'Casio MTP-1374L-1AVDF', image: '/src/assets/watch.jpg' },
+    { id: 2, name: 'Citizen NH8350-83L', image: '/src/assets/watch.jpg' },
+    { id: 3, name: 'Orient FAC00002B0', image: '/src/assets/watch.jpg' },
+    { id: 4, name: 'G-Shock GA-2100-1A1DR', image: '/src/assets/watch.jpg' },
+  ];
+
+  const handleSearch = (e) => {
+    const term = e.target.value.toLowerCase();
+    setSearchTerm(term);
+
+    if (term) {
+      const results = sampleProducts.filter((product) =>
+        product.name.toLowerCase().includes(term)
+      );
+      setSearchResults(results);
+    } else {
+      setSearchResults([]);
+    }
+  };
 
   return (
     <header className="header">
@@ -25,7 +48,22 @@ const Header = () => {
         <div className="actions">
           <div className="search-box">
             <FiSearch className="search-icon" />
-            <input type="text" placeholder="Tìm sản phẩm, thương hiệu..." />
+            <input
+              type="text"
+              placeholder="Tìm sản phẩm, thương hiệu..."
+              value={searchTerm}
+              onChange={handleSearch}
+            />
+            {searchResults.length > 0 && (
+              <div className="search-results">
+                {searchResults.map((result) => (
+                  <Link to={`/product/${result.id}`} className="search-result-item" key={result.id}>
+                    <img src={result.image} alt={result.name} />
+                    <p>{result.name}</p>
+                  </Link>
+                ))}
+              </div>
+            )}
           </div>
 
           <div className="icon-group">
